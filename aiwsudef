@@ -294,7 +294,7 @@ end)
 
 
 pvp:Button("Stack Synapse X", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shuuuiiiii/ajiefo/main/faoiswedf"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shuuuiiiii/aksefa/main/olkeofas"))()
 end)
     
 local toggle = pvp:Toggle("Stack", false,"Toggle", function(st)
