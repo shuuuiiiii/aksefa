@@ -1,4 +1,31 @@
 
+
+local lc = game:GetService("Players").LocalPlayer 
+
+local group = 14655544
+
+local grouplink = "https://www.roblox.com/groups/14655544/Indestructible"
+
+if lc:IsInGroup(group) then 
+
+
+
+      print("RF CLAN")
+
+
+
+else
+
+
+
+      lc:kick("My discord: Daddyy#5020") 
+
+
+
+end
+
+
+
 local p = "https://www.roblox.com/headshot-thumbnail/image?userId=1&width=420&height=420&format=png"
 pcall(function()
     p = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png"
