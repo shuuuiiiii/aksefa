@@ -10,7 +10,7 @@ if lc:IsInGroup(group) then
 
 
 
-      print("RF CLAN")
+      print("")
 
 
 
@@ -18,7 +18,7 @@ else
 
 
 
-      lc:kick("My discord: Daddyy#5020") 
+      lc:kick("Idiot detect") 
 
 
 
